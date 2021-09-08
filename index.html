@@ -32,10 +32,7 @@
             </div>
 
             <div class="nav">
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
+                <i :class="(index == counterPhoto) ? 'active' : null" class="fas fa-circle" v-for="(photo, index) in photos"></i>
             </div>
         </div>
     </div>

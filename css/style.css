@@ -55,9 +55,13 @@
     top: 88%;
 }
 
-.container .wrapper .nav i {
+.container .wrapper .nav > i {
     margin: 20px;
     color: white;
+}
+
+.container .wrapper .nav > i.active {
+    color: blue;
 }
 
 /* / nav */
