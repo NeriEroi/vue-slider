@@ -2,6 +2,9 @@ Vue.config.devtools = true;
 
 const app = new Vue ({
     el: ".container",
+    mounted() {
+        this.startFlip();
+    },
     data: {
         counterPhoto: 0,
         photos: [
@@ -11,6 +14,7 @@ const app = new Vue ({
             "img/image4.jpg",
         ]
     },
+    timer: null,
     methods: {
         prevPhoto() {
             this.counterPhoto -= 1;
@@ -19,6 +23,9 @@ const app = new Vue ({
         nextPhoto() {
             this.counterPhoto += 1;
             if (this.counterPhoto == (this.photos.length)) this.counterPhoto = 0;
+        },
+        startFlip() {
+            this.timer = setInterval(this.nextPhoto, 3000);
         }
     }
 });
